@@ -1,0 +1,52 @@
+### 시작
+GET http://localhost:5500/ HTTP/1.1
+Content-Type: application/json
+
+### 롤링페이퍼 조회
+GET http://localhost:5500/posts/4 HTTP/1.1
+
+
+### 로그인
+POST http://localhost:5500/users/signin HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "update@test.com",
+    "password": "9999"
+}
+
+### 회원가입 , *postId 입력 안됨
+POST http://localhost:5500/users/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "marag@hello.com",
+    "password": "1111",
+    "nickname": "marag"
+}
+
+### 로그아웃
+DELETE http://localhost:5500/users/signout HTTP/1.1
+Content-Type: application/json
+
+
+### *회원정보 조회
+GET http://localhost:5500/users/32 HTTP/1.1
+Content-Type: application/json
+authorization: Bearer token
+
+### *회원정보 수정
+PATCH http://localhost:5500/users/properties HTTP/1.1
+Content-Type: application/json
+authorization: Bearer token
+
+{
+    "nickname": "isUpdated?",
+    "password": "7777",
+    "title": "물론!!"
+}
+
+### 회원탈퇴
+DELETE http://localhost:5500/users/properties HTTP/1.1
+Content-Type: application/json
+authorization: Bearer token
